@@ -26,18 +26,16 @@ public class Categorie implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String index_images;
-    private String header_images;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date created_at;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date updateed_at;
+    private String name;
     @OneToMany(mappedBy = "categorie")
     @JsonProperty(access = Access.WRITE_ONLY)
     private Collection<Category_translations> cat_translation;
     @OneToMany(mappedBy = "categorie")
     @JsonProperty(access = Access.WRITE_ONLY)
     private Collection<Subscribers> subscribers;
+    @OneToMany(mappedBy = "categorie")
+    @JsonProperty(access = Access.WRITE_ONLY)
+    private Collection<Properties> properties;
 
 
 }
