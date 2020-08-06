@@ -17,6 +17,6 @@ public class Property_user {
     private Long id;
     private Long user_id;
     @ManyToOne
-    private Properties property;
+    private Property property;
 }
 

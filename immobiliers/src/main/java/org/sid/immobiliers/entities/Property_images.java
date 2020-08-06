@@ -18,7 +18,11 @@ public class Property_images {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    private Properties property;
+    private Property property;
+    private String images_desc;
+    private String fistImg;
+    private String secondImg;
+    private String thirdImg;
     private byte property_master_images;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date created_at;

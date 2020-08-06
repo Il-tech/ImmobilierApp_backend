@@ -1,19 +1,22 @@
 package org.sid.immobiliers.controller;
 
-import org.sid.immobiliers.dao.CategorieRepository;
-import org.sid.immobiliers.entities.Categorie;
+import org.sid.immobiliers.dao.PropertiesRepository;
+import org.sid.immobiliers.entities.Property;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
 @CrossOrigin("*")
 public class immoRestController {
     @Autowired
-    CategorieRepository categorieRepo;
+    PropertiesRepository propertieRepo;
+    @GetMapping("/listProperties")
+    public List<Property> propertiesList()
+    {
+        return propertieRepo.findAll();
+    }
 
 
 

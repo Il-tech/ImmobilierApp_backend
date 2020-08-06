@@ -16,5 +16,5 @@ public class Subscribers {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    private Categorie categorie;
+    private Category category;
 }

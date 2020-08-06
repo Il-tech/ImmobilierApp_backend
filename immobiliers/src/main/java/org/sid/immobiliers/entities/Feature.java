@@ -1,9 +1,11 @@
 package org.sid.immobiliers.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 @Entity
 @Data
@@ -12,7 +14,7 @@ import java.util.Date;
 @ToString
 @Getter
 @Setter
-public class Features {
+public class Feature {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
@@ -23,6 +25,6 @@ public class Features {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updated_at;
     @ManyToOne
-    private Properties property;
+    private Property property;
 
 }
