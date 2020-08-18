@@ -44,6 +44,7 @@ public class initImmobilierService implements IinitImmobilierService {
 
     @Override
     public void InitAminities() {
+
         String[] features = new String[]{"available","not available"};
         propertyRepository.findAll().forEach(prop-> {
             for (int i = 0; i < prop.getNombre_facades(); i++) {
@@ -65,7 +66,6 @@ public class initImmobilierService implements IinitImmobilierService {
     public void initProperties() {
         double[] nbre = new double[]{1, 1.5, 2, 2.5, 3};
         String[] ville = new String[]{"Casablanca", "Marrakech", "Rabat", "Tanger"};
-
         List<Category> categories = categorieRepository.findAll();
         List<Feature> features = features_repo.findAll();
         List<type_transaction> trans = transRepository.findAll();
@@ -76,6 +76,7 @@ public class initImmobilierService implements IinitImmobilierService {
                 "laurem").forEach(titreProperty -> {
             Property property = new Property();
             property.setTitre(titreProperty);
+            property.setIsFavorite(false);
             property.setSlug(titreProperty);
             property.setAdresse("Tokyo square, Japan -");
             property.setDescription("This upscale, contemporary hotel is 2 km from Hazrat Shahjalal " +
@@ -96,6 +97,7 @@ public class initImmobilierService implements IinitImmobilierService {
             propertyRepository.save(property);
         });
     }
+
 
 
     @Override
@@ -124,7 +126,6 @@ public class initImmobilierService implements IinitImmobilierService {
             user_repo.save(user);
         });
     }
-
 
     @Override
     public void initTypeTransaction() {

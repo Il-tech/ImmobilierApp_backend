@@ -25,6 +25,7 @@ public class Property {
     private String adresse;
     private String description;
     private String video;
+    private Boolean isFavorite;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date renewed_at;
     private int nombre_facades;
